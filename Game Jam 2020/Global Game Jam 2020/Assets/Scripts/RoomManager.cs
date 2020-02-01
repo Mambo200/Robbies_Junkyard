@@ -74,4 +74,14 @@ public class RoomManager : MonoBehaviour
             PreviousRoom();
 
     }
+
+    public void GoLeftButton()
+    {
+        PreviousRoom();
+    }
+
+    public void GoRightButton()
+    {
+        NextRoom();
+    }
 }
