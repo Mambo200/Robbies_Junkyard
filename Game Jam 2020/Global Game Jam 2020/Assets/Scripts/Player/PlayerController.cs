@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
 
     public float MaxDistanceSquare => m_MaxDistanceToObject * m_MaxDistanceToObject;
 
-#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
+#pragma warning disable CS0108
     private Camera camera;
-#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+#pragma warning restore CS0108
 
     private bool isWalking = false;
     RaycastHit toMove;
@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.LogWarning("Here are [Input.GetKeyDown] Functions", this);
+
         // get main Camera
         camera = Camera.main;
     }
