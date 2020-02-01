@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static string PlayerName { get; set; }
+
     [Tooltip("Speed of Character")]
     public float m_Speed = 5f;
     public float m_MaxDistanceToObject = 2f;
