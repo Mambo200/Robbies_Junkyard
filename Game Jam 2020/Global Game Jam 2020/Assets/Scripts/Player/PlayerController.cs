@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.I))
-            Debug.Log(inventory.ToString());
+            inventory.InventoryItems();
     }
 
     private void AcceptClick()

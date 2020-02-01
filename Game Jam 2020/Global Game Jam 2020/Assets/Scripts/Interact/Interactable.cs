@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public abstract Junk JunkType { get;  }
+    public abstract EnumType Enumtype { get; }
+
     /// <summary>
     /// Methods which will be executed at the end of <see cref="Click"/>
     /// </summary>
@@ -35,6 +36,9 @@ public abstract class Interactable : MonoBehaviour
     /// </summary>
     public virtual void Click()
     {
+        Debug.Log("Just clicked on this object", this.gameObject);
+
+
         m_OnClicked.Invoke();
     }
 
@@ -43,16 +47,14 @@ public abstract class Interactable : MonoBehaviour
     /// </summary>
     public virtual void Interact()
     {
+        Debug.Log("Just interacted with this object", this.gameObject);
+
+
         m_OnInteracted.Invoke();
     }
 
-    /// <summary>
-    /// Add Item to inventory
-    /// </summary>
-    public void MoveToInventory(int _addCount)
-    {
-        FindObjectOfType<PlayerController>().inventory.PlayerInventory[JunkType] += _addCount;
-    }
+    public abstract void MoveToInventory(int _addCount);
+
 
     /// <summary>
     /// Destroy this Gameobject
@@ -80,5 +82,49 @@ public abstract class Interactable : MonoBehaviour
         /// Lampe
         /// </summary>
         LAMP,
+
+        /// <summary>
+        /// Gas
+        /// </summary>
+        GAS
+    }
+
+    public enum Tools
+    {
+        /// <summary>
+        /// Hammer
+        /// </summary>
+        Hammer,
+
+        /// <summary>
+        /// Zange
+        /// </summary>
+        CLAWS
+    }
+
+    public enum Fuel
+    {
+        /// <summary>
+        /// Gas
+        /// </summary>
+        GAS
+    }
+
+    public enum EnumType
+    {
+        /// <summary>
+        /// Junk Enum
+        /// </summary>
+        JUNK,
+
+        /// <summary>
+        /// Tools Enum
+        /// </summary>
+        TOOLS,
+
+        /// <summary>
+        /// Fuel Enum
+        /// </summary>
+        FUEL
     }
 }
