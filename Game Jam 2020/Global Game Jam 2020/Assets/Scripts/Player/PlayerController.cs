@@ -43,6 +43,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I))
             inventory.InventoryItems();
+        else if (Input.GetKeyDown(KeyCode.H))
+            Crafting.CraftHammer(inventory);
+        else if (Input.GetKeyDown(KeyCode.T))
+            Crafting.CraftTongs(inventory);
+        else if (Input.GetKeyDown(KeyCode.R))
+            Crafting.CraftRocket(inventory);
     }
 
     private void AcceptClick()
