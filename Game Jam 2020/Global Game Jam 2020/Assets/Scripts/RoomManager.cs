@@ -66,12 +66,22 @@ public class RoomManager : MonoBehaviour
     public void NextRoom() => ToRoom(currentRoom + 1);
     public void PreviousRoom() => ToRoom(currentRoom - 1);
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.KeypadPlus))
-            NextRoom();
-        else if (Input.GetKeyDown(KeyCode.KeypadMinus))
-            PreviousRoom();
+    //public void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.KeypadPlus))
+    //        NextRoom();
+    //    else if (Input.GetKeyDown(KeyCode.KeypadMinus))
+    //        PreviousRoom();
+    //
+    //}
 
+    public void GoLeft()
+    {
+        PreviousRoom();
+    }
+
+    public void GoRight()
+    {
+        NextRoom();
     }
 }
