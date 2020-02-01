@@ -83,6 +83,9 @@ public class PlayerController : MonoBehaviour
                     // walk to destination
                     isWalking = true;
                     toMove = hit;
+
+                    // Rotate Player
+                    Rotate(hit.point);
                 }
 
                 else if (tag == "Interactable")
@@ -90,7 +93,7 @@ public class PlayerController : MonoBehaviour
                     // do something when something interactable was clicked
 
                     // check if object is already in Range
-                    if(InRange(hit.collider.transform.position))
+                    if (InRange(hit.collider.transform.position))
                     {
                         // get interactable and check if component is not null
                         if (!GetInteractable(hit.collider.gameObject, out Interactable interact))
@@ -121,6 +124,9 @@ public class PlayerController : MonoBehaviour
 
                         isWalking = true;
                         toMove = hit;
+
+                        // Rotate Player
+                        Rotate(hit.point);
                     }
                 }
             }
@@ -173,7 +179,7 @@ public class PlayerController : MonoBehaviour
             float distanceSqr = Vector3.SqrMagnitude(this.transform.position - _hitObject.collider.gameObject.transform.position);
 
             // check distance
-            if(InRange(distanceSqr, MaxDistanceSquare))
+            if (InRange(distanceSqr, MaxDistanceSquare))
             {
                 // end movement
                 toMove = new RaycastHit();
@@ -209,5 +215,24 @@ public class PlayerController : MonoBehaviour
                 ),
             m_Speed * Time.deltaTime
             );
+    }
+
+    private void Rotate(Vector3 _destination)
+    {
+        Vector3 tolook = new Vector3(
+            _destination.x,
+            transform.position.y,
+            _destination.z
+            );
+
+        transform.LookAt(tolook);
+
+        transform.rotation = Quaternion.Euler(
+            transform.rotation.eulerAngles.x,
+            transform.rotation.eulerAngles.y - 90,
+            transform.rotation.eulerAngles.z
+            );
+
+        Debug.Log(transform.rotation.eulerAngles);
     }
 }
