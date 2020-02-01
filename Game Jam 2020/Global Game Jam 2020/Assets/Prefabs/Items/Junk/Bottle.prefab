@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6847111329938045051}
   - component: {fileID: 6847111329938045048}
   - component: {fileID: 6847111329938045049}
+  - component: {fileID: 4395399698795207873}
   - component: {fileID: 5649968250211142496}
   m_Layer: 0
   m_Name: Bottle
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6847111329938045031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.05, y: 1.48, z: -4.54}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6847111329938045031}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 8684922247813086950, guid: 0bca2db30f0175248bd051cdd62aeacb, type: 3}
 --- !u!23 &6847111329938045048
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 600b1e906e144714ba9fceb15baa2218, type: 2}
+  - {fileID: 2100000, guid: b8f3f21597e52664ca2cd56fdc3d31ae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,10 +91,24 @@ BoxCollider:
   m_GameObject: {fileID: 6847111329938045031}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5, y: 0.15, z: 0.15}
+  m_Center: {x: 0, y: 0, z: 0.05}
+--- !u!64 &4395399698795207873
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847111329938045031}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8684922247813086950, guid: 0bca2db30f0175248bd051cdd62aeacb, type: 3}
 --- !u!114 &5649968250211142496
 MonoBehaviour:
   m_ObjectHideFlags: 0
