@@ -7,7 +7,6 @@ TagManager:
   - Wall
   - Ground
   - Interactable
-  - Menu
   layers:
   - Default
   - TransparentFX
