@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
             return;
         }
         PlayerController.PlayerName = _inputField.text;
+        MyRandom.SetSeed();
         SceneManager.LoadScene(1);
         Debug.Log("Game is starting");
     }
