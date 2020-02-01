@@ -84,9 +84,34 @@ public abstract class Interactable : MonoBehaviour
         LAMP,
 
         /// <summary>
-        /// Gas
+        /// Flasche
         /// </summary>
-        GAS
+        BOTTLE,
+
+        /// <summary>
+        /// Klebeband
+        /// </summary>
+        DUCKTAPE,
+
+        /// <summary>
+        /// Pappe
+        /// </summary>
+        CARDBOARD,
+
+        /// <summary>
+        /// Startknopf
+        /// </summary>
+        STARTBUTTON,
+
+        /// <summary>
+        /// Holzbrett
+        /// </summary>
+        WOODENPLANK,
+
+        /// <summary>
+        /// Wellblech
+        /// </summary>
+        CORRUGATEDIRON
     }
 
     public enum Tools
@@ -94,12 +119,12 @@ public abstract class Interactable : MonoBehaviour
         /// <summary>
         /// Hammer
         /// </summary>
-        Hammer,
+        HAMMER,
 
         /// <summary>
         /// Zange
         /// </summary>
-        CLAWS
+        TONGS
     }
 
     public enum Fuel
