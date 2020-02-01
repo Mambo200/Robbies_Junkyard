@@ -36,7 +36,6 @@ public abstract class Interactable : MonoBehaviour
     /// </summary>
     public virtual void Click()
     {
-        Debug.Log("Just clicked on this object", this.gameObject);
 
 
         m_OnClicked.Invoke();
@@ -47,7 +46,6 @@ public abstract class Interactable : MonoBehaviour
     /// </summary>
     public virtual void Interact()
     {
-        Debug.Log("Just interacted with this object", this.gameObject);
 
 
         m_OnInteracted.Invoke();

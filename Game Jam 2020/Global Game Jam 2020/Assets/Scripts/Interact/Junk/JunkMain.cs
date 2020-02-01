@@ -14,6 +14,8 @@ public abstract class JunkMain : Interactable
     /// <param name="_amount">amount to add to inventory</param>
     public override void MoveToInventory(int _amount)
     {
+        Debug.Log("Pick up " + JunkType.ToString());
+
         FindObjectOfType<PlayerController>().inventory.AddItem(JunkType, _amount);
     }
 
