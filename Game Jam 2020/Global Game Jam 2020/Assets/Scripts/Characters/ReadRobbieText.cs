@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReadRobbieText : MonoBehaviour
 {
-    [SerializeField]
-    private string m_ResourcePath = "";
-
+    public Text ChangeText;
     public TextAsset Raw { get; private set; }
 
     public string[] Lines { get; private set; }
@@ -20,7 +19,7 @@ public class ReadRobbieText : MonoBehaviour
 
     public void LoadFile()
     {
-        Raw = Resources.Load<TextAsset>(m_ResourcePath);
+        Raw = Resources.Load<TextAsset>("Text/Robbie_Text");
 
 #if(DEBUG)
         if (Raw == null)
@@ -35,7 +34,7 @@ public class ReadRobbieText : MonoBehaviour
 
     public void GetRandomText()
     {
-
+        ChangeText.text = Lines[MyRandom.GetRandomNumber(Lines.Length)];
     }
 
 }
