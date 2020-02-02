@@ -11,11 +11,9 @@ public class Cogwheel : JunkMain
         base.Click();
     }
 
-    public override void Interact()
+    public override void Interact(PlayerController _player)
     {
-
-
-        base.Interact();
+        base.Interact(_player);
     }
 
 

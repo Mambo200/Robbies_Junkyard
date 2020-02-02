@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
                         }
                         else
                         {
-                            interact.Interact();
+                            interact.Interact(this);
 
                             animator.SetBool("PickUpActive", true);
                             animator.SetBool("IdleActive", false);
