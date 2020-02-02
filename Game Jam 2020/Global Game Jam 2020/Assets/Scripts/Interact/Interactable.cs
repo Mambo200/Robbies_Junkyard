@@ -44,7 +44,7 @@ public abstract class Interactable : MonoBehaviour
     /// <summary>
     /// interact with object
     /// </summary>
-    public virtual void Interact()
+    public virtual void Interact(PlayerController _player)
     {
 
 
@@ -148,6 +148,11 @@ public abstract class Interactable : MonoBehaviour
         /// <summary>
         /// Fuel Enum
         /// </summary>
-        FUEL
+        FUEL,
+
+        /// <summary>
+        /// Rocket
+        /// </summary>
+        ROCKET
     }
 }
