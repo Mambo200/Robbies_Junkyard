@@ -97,13 +97,13 @@ public static class Crafting
         _inventory.JunkInventory[Interactable.Junk.BOTTLE] -= 1;
         _inventory.JunkInventory[Interactable.Junk.WOODENPLANK] -= 4;
         _inventory.JunkInventory[Interactable.Junk.CORRUGATEDIRON] -= 1;
-        _inventory.JunkInventory[Interactable.Junk.DUCKTAPE] -= 4;
         _inventory.JunkInventory[Interactable.Junk.CARDBOARD] -= 1;
-        _inventory.JunkInventory[Interactable.Junk.BOLT] -= 15;
-        _inventory.JunkInventory[Interactable.Junk.BOLTNUT] -= 15;
-        _inventory.JunkInventory[Interactable.Junk.COGWHEEL] -= 20;
-        _inventory.FuelInventory[Interactable.Fuel.GAS] -= 5;
+        _inventory.JunkInventory[Interactable.Junk.BOLT] -= 10;
+        _inventory.JunkInventory[Interactable.Junk.BOLTNUT] -= 10;
+        _inventory.JunkInventory[Interactable.Junk.COGWHEEL] -= 15;
+        _inventory.JunkInventory[Interactable.Junk.DUCKTAPE] -= 4;
         _inventory.JunkInventory[Interactable.Junk.STARTBUTTON] -= 1;
+        _inventory.FuelInventory[Interactable.Fuel.GAS] -= 5;
 
         Debug.Log("Rocked build");
 
@@ -116,9 +116,9 @@ public static class Crafting
     /// 4 <see cref="Interactable.Junk.WOODENPLANK"/>, 
     /// 1 <see cref="Interactable.Junk.CORRUGATEDIRON"/>, 
     /// 1 <see cref="Interactable.Junk.CARDBOARD"/>, 
-    /// 15 <see cref="Interactable.Junk.BOLT"/>, 
-    /// 15 <see cref="Interactable.Junk.BOLTNUT"/>,
-    /// 20 <see cref="Interactable.Junk.COGWHEEL"/>, 
+    /// 10 <see cref="Interactable.Junk.BOLT"/>, 
+    /// 10 <see cref="Interactable.Junk.BOLTNUT"/>,
+    /// 15 <see cref="Interactable.Junk.COGWHEEL"/>, 
     /// 1 <see cref="Interactable.Junk.STARTBUTTON"/>, 
     /// 4 <see cref="Interactable.Junk.DUCKTAPE"/>
     /// 1 <see cref="Interactable.Tools.HAMMER"/>, 
@@ -153,19 +153,19 @@ public static class Crafting
                 InfoText.Get.Message($"You are missing {Interactable.Junk.CARDBOARD.ToString().ToLower()}s!", 5f, Color.red);
             return false;
         }
-        else if (_inventory.JunkInventory[Interactable.Junk.BOLT] < 15)
+        else if (_inventory.JunkInventory[Interactable.Junk.BOLT] < 10)
         {
             if (_sendInfoMessage)
                 InfoText.Get.Message($"You are missing {Interactable.Junk.BOLT.ToString().ToLower()}s!", 5f, Color.red);
             return false;
         }
-        else if (_inventory.JunkInventory[Interactable.Junk.BOLTNUT] < 15)
+        else if (_inventory.JunkInventory[Interactable.Junk.BOLTNUT] < 10)
         {
             if (_sendInfoMessage)
                 InfoText.Get.Message($"You are missing {Interactable.Junk.BOLTNUT.ToString().ToLower()}s!", 5f, Color.red);
             return false;
         }
-        else if (_inventory.JunkInventory[Interactable.Junk.COGWHEEL] < 20)
+        else if (_inventory.JunkInventory[Interactable.Junk.COGWHEEL] < 15)
         {
             if (_sendInfoMessage)
                 InfoText.Get.Message($"You are missing {Interactable.Junk.COGWHEEL.ToString().ToLower()}s!", 5f, Color.red);
