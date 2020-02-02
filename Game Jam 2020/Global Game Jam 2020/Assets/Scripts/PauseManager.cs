@@ -46,6 +46,11 @@ public class PauseManager : MonoBehaviour
 
     private Inventory playerInventory;
 
+    public void SetInventory(Inventory _inventory)
+    {
+        playerInventory = _inventory;
+    }
+
     private void Start()
     {
         instance = this;

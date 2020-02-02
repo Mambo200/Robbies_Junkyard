@@ -13,10 +13,11 @@ public class RocketDestroyed : Rocket
 
     public override void Interact(PlayerController _player)
     {
-        if (Crafting.CraftRocket(_player.inventory))
+        if (Crafting.CraftRocket(_player.inventory, true))
         {
             // Player has enough materials to build
             m_RepairedRocketInScene.SetActive(true);
+
         }
         else
         {

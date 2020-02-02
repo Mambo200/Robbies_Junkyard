@@ -47,7 +47,6 @@ public abstract class Interactable : MonoBehaviour
     public virtual void Interact(PlayerController _player)
     {
 
-
         m_OnInteracted.Invoke();
     }
 
