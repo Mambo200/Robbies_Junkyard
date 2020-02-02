@@ -15,11 +15,11 @@ public class PlayerSpawn : MonoBehaviour
         // Instanciate Player
         m_PlayerInScene = Instantiate(m_ToSpawn);
 
-        // prepare Player
-        Rigidbody rigidbody = m_PlayerInScene.AddComponent<Rigidbody>();
-        rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-
-        m_PlayerInScene.AddComponent<PlayerController>();
+        //// prepare Player
+        //Rigidbody rigidbody = m_PlayerInScene.AddComponent<Rigidbody>();
+        //rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        //
+        //m_PlayerInScene.AddComponent<PlayerController>();
 
         // Set Player in Roommanager
         RoomManager.Get.m_Player = m_PlayerInScene;

@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float m_Speed = 5f;
     public float m_MaxDistanceToObject = 2f;
 
+
     public float MaxDistanceSquare => m_MaxDistanceToObject * m_MaxDistanceToObject;
 
 #pragma warning disable CS0108
@@ -18,6 +19,11 @@ public class PlayerController : MonoBehaviour
 
     private bool isWalking = false;
     RaycastHit toMove;
+
+    [SerializeField]
+    private Animator animator;
+    private float aminationTime;
+    public float m_WaitAnimationTimePickUp;
 
     [HideInInspector]
     public Inventory inventory = new Inventory();
@@ -35,14 +41,37 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Player is not walking
-        if (!isWalking) AcceptClick();
+        if (!isWalking)
+        {
+            if (!animator.GetBool("PickUpActive"))
+                AcceptClick();
+
+            animator.SetBool("WalkActive", false);
+            animator.SetBool("IdleActive", true);
+        }
 
         // player is currently walking to a destination
         else
         {
-            bool withDistance = toMove.collider.gameObject.tag == "Interactable" ? true : false;
-            WalkTo(toMove, withDistance);
+            if (!animator.GetBool("PickUpActive"))
+            {
+                bool withDistance = toMove.collider.gameObject.tag == "Interactable" ? true : false;
+                WalkTo(toMove, withDistance);
+
+                animator.SetBool("WalkActive", true);
+                animator.SetBool("IdleActive", false);
+            }
         }
+
+        // reduce Timer for PuckUpActive bool in Animator
+        if (animator.GetBool("PickUpActive"))
+        {
+            aminationTime -= Time.deltaTime;
+
+            if (aminationTime <= 0)
+                animator.SetBool("PickUpActive", false);
+        }
+
 
 
         if (Input.GetKeyDown(KeyCode.I))
@@ -86,8 +115,9 @@ public class PlayerController : MonoBehaviour
                     isWalking = true;
                     toMove = hit;
 
-                    // Rotate Player
-                    Rotate(hit.point);
+                    if (!animator.GetBool("PickUpActive"))
+                        // Rotate Player
+                        Rotate(hit.point);
                 }
 
                 else if (tag == "Interactable")
@@ -106,6 +136,12 @@ public class PlayerController : MonoBehaviour
                         else
                         {
                             interact.Interact();
+
+                            animator.SetBool("PickUpActive", true);
+                            animator.SetBool("IdleActive", false);
+                            animator.SetBool("WalkActive", false);
+
+                            aminationTime = m_WaitAnimationTimePickUp;
                         }
 
                     }
@@ -127,8 +163,9 @@ public class PlayerController : MonoBehaviour
                         isWalking = true;
                         toMove = hit;
 
-                        // Rotate Player
-                        Rotate(hit.point);
+                        if (!animator.GetBool("PickUpActive"))
+                            // Rotate Player
+                            Rotate(hit.point);
                     }
                 }
             }
