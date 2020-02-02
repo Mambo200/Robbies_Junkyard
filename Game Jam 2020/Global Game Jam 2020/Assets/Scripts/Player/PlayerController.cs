@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseManager.Get.GamePaused) return;
         // Player is not walking
         if (!isWalking)
         {

@@ -85,6 +85,7 @@ public static class Crafting
         _inventory.JunkInventory[Interactable.Junk.BOLT] -= 15;
         _inventory.JunkInventory[Interactable.Junk.BOLTNUT] -= 15;
         _inventory.JunkInventory[Interactable.Junk.COGWHEEL] -= 20;
+        _inventory.FuelInventory[Interactable.Fuel.GAS] -= 5;
         _inventory.JunkInventory[Interactable.Junk.STARTBUTTON] -= 1;
 
         Debug.Log("Rocked build");
@@ -105,6 +106,7 @@ public static class Crafting
     /// 1 <see cref="Interactable.Junk.DUCKTAPE"/>
     /// 1 <see cref="Interactable.Tools.HAMMER"/>, 
     /// 1 <see cref="Interactable.Tools.TONGS"/>, 
+    /// 5 <see cref="Interactable.Fuel.GAS"/>, 
     /// </summary>
     /// <param name="_inventory">players Inventory</param>
     /// <returns>true if player has enough of materials, else false</returns>
@@ -120,6 +122,7 @@ public static class Crafting
             && _inventory.JunkInventory[Interactable.Junk.STARTBUTTON] >= 1
             && _inventory.ToolInventory[Interactable.Tools.HAMMER] >= 1
             && _inventory.ToolInventory[Interactable.Tools.TONGS] >= 1
+            && _inventory.FuelInventory[Interactable.Fuel.GAS] >= 5
             )
             return true;
         else return false;
