@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.LogWarning("Here are [Input.GetKeyDown] Functions", this);
+        PauseManager.Get.SetInventory(inventory);
 
         // get main Camera
         camera = Camera.main;
@@ -72,17 +72,6 @@ public class PlayerController : MonoBehaviour
             if (aminationTime <= 0)
                 animator.SetBool("PickUpActive", false);
         }
-
-
-
-        if (Input.GetKeyDown(KeyCode.I))
-            inventory.InventoryItems();
-        else if (Input.GetKeyDown(KeyCode.H))
-            Crafting.CraftHammer(inventory);
-        else if (Input.GetKeyDown(KeyCode.T))
-            Crafting.CraftTongs(inventory);
-        else if (Input.GetKeyDown(KeyCode.R))
-            Crafting.CraftRocket(inventory);
     }
 
     private void AcceptClick()

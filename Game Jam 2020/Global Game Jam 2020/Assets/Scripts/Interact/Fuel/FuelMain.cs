@@ -14,8 +14,10 @@ public abstract class FuelMain : Interactable
     /// <param name="_amount">amount to add to inventory</param>
     public override void MoveToInventory(int _amount)
     {
-        Debug.Log("Pick up " + FuelType.ToString());
+        InfoText.Get.Message($"You found {FuelType.ToString().ToLower()}: ({_amount})", 2.5f, Color.yellow);
+
         FindObjectOfType<PlayerController>().inventory.AddItem(FuelType, _amount);
     }
+
 
 }

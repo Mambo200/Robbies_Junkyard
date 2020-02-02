@@ -14,7 +14,7 @@ public abstract class ToolsMain : Interactable
     /// <param name="_amount">amount to add to inventory</param>
     public override void MoveToInventory(int _amount)
     {
-        Debug.Log("Pick up " + ToolType.ToString());
+        InfoText.Get.Message($"You found {ToolType.ToString().ToLower()}: ({_amount})", 2.5f, Color.yellow);
 
         FindObjectOfType<PlayerController>().inventory.AddItem(ToolType, _amount);
     }
