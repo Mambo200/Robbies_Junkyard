@@ -8567,7 +8567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StartRoom: 4
-  m_ToSpawn: {fileID: -927199367670048503, guid: cdc3fa21508f0424db26dcc79833e158,
+  m_ToSpawn: {fileID: 3776070132027160422, guid: 06f7413681c4f4347b3565f31ba860d3,
     type: 3}
 --- !u!1 &1935160472
 GameObject:
