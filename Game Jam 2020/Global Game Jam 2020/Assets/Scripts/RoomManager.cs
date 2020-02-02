@@ -52,7 +52,7 @@ public class RoomManager : MonoBehaviour
             return;
 
         // teleport Player
-        m_Player.transform.position = m_Room[_room].transform.position + new Vector3(0, 1, 0);
+        m_Player.transform.position = m_Room[_room].transform.position + new Vector3(0, 1.5f, 0);
         m_Player.transform.rotation = m_RoomCameraposition[_room].transform.rotation;
 
         // teleport Camera and set rotation
